@@ -337,6 +337,64 @@ STEP 5 → You say "yes" → I execute
 
 ---
 
+## 👤 CHARACTER STORAGE SYSTEM
+
+### Overview
+Save character profiles with multiple angles for quick reference in future generations.
+
+### Storage Location
+```
+/home/ec2-user/characters/
+├── index.json           # List of all characters
+└── [character_id]/
+    ├── metadata.json    # Character info
+    ├── frente.jpg        # Front photo
+    ├── perfil_derecho.jpg
+    ├── perfil_izquierdo.jpg
+    └── combinado.jpg     # Combined 3-angles photo
+```
+
+### Commands
+
+| You Say | I Do |
+|---------|------|
+| "Guárdate este personaje" | Ask for name, save 3 angles to `characters/` |
+| "¿Qué personajes tienes?" | List all saved characters |
+| "Usa [nombre]" | Load character photos as reference |
+| "Bórralo [nombre]" | Delete character folder |
+
+### Workflow (Saving a Character)
+
+```
+YOU: "Guárdate este personaje"
+
+JARVIS: "¿Cómo se llama el personaje?"
+
+YOU: "Goku"
+
+JARVIS: "Mándame 3 fotos: frente, perfil derecho, perfil izquierdo"
+
+YOU: [sends 3 photos]
+
+JARVIS: "✅ Guardado: Goku (3 ángulos)
+
+JARVIS: "¿Quieres usarlo ahora?"
+
+YOU: "Yes" or "No"
+```
+
+### Using a Saved Character
+
+```
+YOU: "Usa Goku para una imagen de pelea"
+
+JARVIS: [Loads Goku's photos]
+
+JARVIS: [Proceeds with image generation using Goku as reference]
+```
+
+---
+
 ## 📚 Reference Files
 
 - `references/image-models.md` - Nano Banana 2 full specs
@@ -345,6 +403,9 @@ STEP 5 → You say "yes" → I execute
 - `references/prompt-formulas.md` - Copy-paste prompt templates
 - `references/camera-lighting.md` - Camera moves & lighting guide
 - `references/editing-workflows.md` - Remotion + FFmpeg workflows
+
+### Characters Directory
+- `/home/ec2-user/characters/` - Saved character profiles
 
 ---
 
